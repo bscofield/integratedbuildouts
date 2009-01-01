@@ -1,0 +1,28 @@
+IntegratedBuildouts
+===================
+
+IntegratedBuildouts encapsulates the design pattern (roughly described here http://www.pathf.com/blogs/2008/08/integrating-design-drafts-into-your-rails-app/) in which built-out HTML wireframes and/or templates live alongside the actual, live views in your Rails application. 
+
+To implement this, install the plugin and create a buildouts folder in app/views. The structure of the buildouts folder should replicate that of the rest of your views (see example). Once that's in place, you can add the helper method link_to_buildout on any view in your application, and that page (in development mode) will contain a link to the corresponding template in the buildouts folder, allowing users to switch from the live copy to the template/wireframe at will.
+
+
+Example
+=======
+
+Say you have a subscription application with the following view structure:
+
+/views/magazines (containing index.html.erb, etc.)
+/views/users (containing show.html.erb, etc.)
+/views/subscriptions (containing index.html.erb and show.html.erb only)
+
+Once you've installed the plugin, you'll create the following:
+/views/buildouts/magazines/index.erb, etc.
+/views/buildouts/users/show.erb, etc.
+/views/buildouts/subscriptions/index.erb
+/views/buildouts/subscriptions/show.erb
+
+These templates may contain Ruby code (so you can render partials, etc.), but may also just be static HTML, and each will be accessible by the custom format .buildout on your URLs. That is, if you go to /magazines to access magazines/index.html.erb, you can go to /magazines/index.buildout to see the template/wireframe. 
+
+
+
+Copyright (c) 2009 Ben Scofield of Viget Labs, released under the MIT license

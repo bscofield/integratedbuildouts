@@ -1,14 +1,6 @@
 module IntegratedBuildouts
   def self.included(base)
     base.class_eval do
-      helper {
-        def link_to_buildout
-          if Rails.env == 'development' && params[:controller] != 'buildouts'
-            link_to 'view buildout', buildout_path(:c => params[:controller], :a => params[:action])
-          end
-        end
-      }
-
       before_filter :check_for_buildout  if Rails.env == 'development'
     end
   end

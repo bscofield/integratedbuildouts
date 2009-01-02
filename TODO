@@ -1,2 +1,3 @@
 * Add tests
 * Improve the README and example
+* Solve helper inclusion problem - doesn't reload in dev mode, so you have to add helper :buildouts to the actual ApplicationController

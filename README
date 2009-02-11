@@ -3,7 +3,7 @@ IntegratedBuildouts
 
 IntegratedBuildouts encapsulates the design pattern (roughly described here http://www.pathf.com/blogs/2008/08/integrating-design-drafts-into-your-rails-app/) in which built-out HTML wireframes and/or templates live alongside the actual, live views in your Rails application. 
 
-To implement this, install the plugin and create a buildouts folder in app/views. The structure of the buildouts folder should replicate that of the rest of your views (see example). Once that's in place, you can add the helper method link_to_buildout on any view in your application, and that page (in development mode) will contain a link to the corresponding template in the buildouts folder, allowing users to switch from the live copy to the template/wireframe at will.
+To implement this, install the plugin, add +helper :buildouts+ to your application_controller.rb, and create a buildouts folder in app/views. The structure of the buildouts folder should replicate that of the rest of your views (see example). Once that's in place, you can add the helper method link_to_buildout on any view in your application, and that page (in development mode) will contain a link to the corresponding template in the buildouts folder, allowing users to switch from the live copy to the template/wireframe at will.
 
 
 Example

@@ -1,4 +1,5 @@
 class BuildoutsController < ApplicationController
+  unloadable
   skip_before_filter :check_for_buildout
   
   def show
